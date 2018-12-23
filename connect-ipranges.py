@@ -10,11 +10,11 @@ cloudfront_ips = [item['ip_prefix'] for item in ip_ranges if (item["service"] ==
 connect_ranges = []
 
 for ip in connect_ips:
-    ranges.append(ip)
+    connect_ranges.append(ip)
 for ip in ec2_ips:
-    ranges.append(ip)
+    connect_ranges.append(ip)
 for ip in cloudfront_ips:
-    ranges.append(ip)
+    connect_ranges.append(ip)
 
 print("ranges needing access to tcp/443:")
 for ip in connect_ranges: print(str(ip))
